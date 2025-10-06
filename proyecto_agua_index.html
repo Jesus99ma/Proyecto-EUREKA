@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>¿De qué manera podemos concientizar a nuestra comunidad para generar un cambio significativo en el cuidado del agua?</title>
+  <!-- Favicon: gota (inline SVG data URI) -->
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23006fbf' d='M32 2s14 14 14 25A14 14 0 0 1 32 41 14 14 0 0 1 18 27C18 16 32 2 32 2z'/></svg>"> 
+  <style>
+    /* Reset & base */
+    :root{
+      --blue-700:#0466c8;
+      --blue-500:#1f8eed;
+      --blue-100:#eaf6ff;
+      --white:#ffffff;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#0f172a}
+    a{color:inherit}
+
+    /* Background waves (subtle, slow) */
+    .site-bg{
+      position:fixed;inset:0;z-index:-2;overflow:hidden;background:linear-gradient(180deg,var(--blue-100),#f8fcff 60%);
+    }
+    .wave{
+      position:absolute;left:50%;transform:translateX(-50%);width:200%;height:30vh;opacity:0.12;background:radial-gradient(circle at 50% 50%, rgba(1,119,210,0.15), transparent 40%);
+      filter: blur(24px);
+      animation: floatSlow 18s linear infinite;
+    }
+    .wave.w2{top:10vh;animation-duration:26s;opacity:0.10}
+    .wave.w3{top:30vh;animation-duration:34s;opacity:0.08}
+    @keyframes floatSlow{
+      0%{transform:translateX(-55%) translateY(0) scale(1)}
+      50%{transform:translateX(-45%) translateY(8px) scale(1.02)}
+      100%{transform:translateX(-55%) translateY(0) scale(1)}
+    }
+
+    /* layout */
+    .container{max-width:var(--max-width);margin:0 auto;padding:26px}
+    nav{position:fixed;top:12px;left:0;right:0;display:flex;justify-content:center;z-index:40}
+    .nav-inner{background:rgba(4,102,200,0.95);backdrop-filter:blur(6px);color:white;border-radius:12px;padding:10px 18px;box-shadow:0 6px 20px rgba(4,102,200,0.18);display:flex;gap:18px;align-items:center}
+    .brand{font-weight:700}
+    .nav-inner button{background:transparent;border:0;color:inherit;padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:600}
+    .nav-inner button:hover, .nav-inner button.active{background:rgba(255,255,255,0.07)}
+
+    header{min-height:80vh;display:flex;align-items:center;justify-content:center;padding-top:64px}
+    .hero{background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.12));border-radius:16px;padding:40px;box-shadow:0 8px 30px rgba(8,78,133,0.08);text-align:center}
+    .hero h1{margin:0;font-size:clamp(20px,3.6vw,40px);color:var(--blue-700)}
+    .hero p{margin-top:18px;color:#334155;line-height:1.6;max-width:900px;margin-left:auto;margin-right:auto}
+    .hero .cta{margin-top:22px}
+
+    section{padding:80px 16px}
+    .card{background:white;border-radius:12px;padding:26px;box-shadow:0 8px 30px rgba(8,78,133,0.04)}
+    h2{color:var(--blue-700);display:flex;align-items:center;gap:12px;margin:0 0 12px 0}
+    p, li{color:#334155}
+    ul{padding-left:18px}
+
+    /* subtle appear animations */
+    .fade-up{opacity:0;transform:translateY(10px);animation:fadeUp 0.9s forwards;}
+    .delay-1{animation-delay:0.12s}.delay-2{animation-delay:0.24s}.delay-3{animation-delay:0.36s}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+    /* footer */
+    footer{padding:28px 16px;text-align:center;color:#475569}
+
+    /* responsive */
+    @media(min-width:760px){
+      .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    }
+
+    /* button style */
+    .btn{background:var(--blue-700);color:white;padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn.outline{background:transparent;border:2px solid rgba(4,102,200,0.12);color:var(--blue-700)}
+  </style>
+</head>
+<body>
+  <div class="site-bg">
+    <div class="wave w1"></div>
+    <div class="wave w2"></div>
+    <div class="wave w3"></div>
+  </div>
+
+  <nav aria-label="Navegación principal">
+    <div class="nav-inner container">
+      <div class="brand">Conciencia del Agua</div>
+      <div style="width:14px"></div>
+      <button data-target="inicio" class="active">Inicio</button>
+      <button data-target="problema">Problema</button>
+      <button data-target="estrategias">Estrategias</button>
+      <button data-target="propuesta">Propuesta</button>
+      <button data-target="conclusion">Conclusión</button>
+      <button data-target="creditos">Créditos</button>
+    </div>
+  </nav>
+
+  <main>
+    <header id="inicio" class="container">
+      <div class="hero card fade-up delay-1">
+        <h1>¿De qué manera podemos concientizar a nuestra comunidad para generar un cambio significativo en el cuidado del agua?</h1>
+        <p>
+          El agua es fuente de vida y su disponibilidad está amenazada por el mal uso y la falta de conciencia. Este proyecto busca inspirar a la comunidad —desde la escuela hasta las autoridades— a cuidar el agua a través de educación, vigilancia y acción comunitaria.
+        </p>
+        <div class="cta">
+          <button class="btn" id="verInforme">Ver informe completo</button>
+        </div>
+      </div>
+    </header>
+
+    <section id="problema" class="container">
+      <div class="card fade-up delay-2">
+        <h2>Problema</h2>
+        <p>
+          La crisis hídrica es una realidad que afecta a millones de personas. En muchas comunidades, el acceso al agua potable es limitado y desigual; esto no es solo una cuestión ambiental sino también social y ética: cuidar el agua significa cuidar la dignidad humana.
+        </p>
+        <p>
+          La falta de conciencia en el uso responsable, así como la ausencia de políticas y vigilancia adecuadas, agravan la problemática. Por eso es urgente combinar educación, acción comunitaria y gestión pública para generar cambios sostenibles.
+        </p>
+      </div>
+    </section>
+
+    <section id="estrategias" class="container">
+      <div class="card fade-up delay-3">
+        <h2>Estrategias</h2>
+        <div class="grid-2">
+          <div>
+            <h3>Incorporación educativa</h3>
+            <p>
+              Integrar la educación ambiental en el currículo escolar para formar conciencia desde edades tempranas. Implementar proyectos de investigación, actividades de reforestación y visitas a reservas para conectar teoría y práctica.
+            </p>
+          </div>
+          <div>
+            <h3>Acción comunitaria y vigilancia</h3>
+            <p>
+              Formar promotores locales y brigadas que realicen campañas de limpieza, monitoreo de fugas y actividades educativas. La supervisión de la calidad y la regulación son necesarias para garantizar acceso seguro al agua.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="propuesta" class="container">
+      <div class="card fade-up">
+        <h2>Propuesta: Brigadas Comunitarias del Agua</h2>
+        <p>
+          Crear grupos locales que promuevan el uso responsable del agua y prácticas sostenibles. Las brigadas actuarían como multiplicadores de conocimiento y vigilantes del buen uso del recurso.
+        </p>
+        <ul>
+          <li><strong>Monitorear:</strong> registrar y reportar fugas y fuentes de desperdicio.</li>
+          <li><strong>Educar:</strong> charlas, ferias y talleres en escuelas y vecindarios.</li>
+          <li><strong>Actuar:</strong> campañas de limpieza, reforestación y reúso responsable del agua.</li>
+        </ul>
+        <p>
+          Estas acciones fomentan el sentido de pertenencia y responsabilidad comunitaria, lo que facilita la sostenibilidad a largo plazo.
+        </p>
+      </div>
+    </section>
+
+    <section id="conclusion" class="container">
+      <div class="card fade-up">
+        <h2>Conclusión</h2>
+        <p>
+          Concientizar sobre el cuidado del agua implica reconstruir nuestro vínculo con la naturaleza. Cada gota cuenta y cada acción puede marcar la diferencia. El cambio real comienza cuando las personas afectadas se convierten en agentes de transformación.
+        </p>
+        <p>
+          Cuidar el agua es cuidar el futuro; por ello, la educación, la participación comunitaria y la vigilancia pública deben trabajar de la mano.
+        </p>
+      </div>
+    </section>
+
+    <section id="creditos" class="container">
+      <div class="card fade-up">
+        <h2>Créditos</h2>
+        <p>I.E. San Miguel – Ciencia y Tecnología</p>
+        <p>Alumnos: Culquicondor Purizaca Jesús Mateo; Gil Sánchez Kiara Ximena; Chinguel Chanta María de Jesús; Chunga Timana Abraham Manuel; Guerrero Molina Antonella; Gallo Chapillique Richard Mattius; Morales Cueva Daniel Junior; Arcela Ancajima José Daniel.</p>
+        <p>Docente: Canales Montenegro Luz María</p>
+        <p style="margin-top:14px;color:#64748b">Piura – Perú</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <small>Proyecto de concientización sobre el agua — I.E. San Miguel</small>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Smooth navigation
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const target = btn.getAttribute('data-target');
+        document.getElementById(target).scrollIntoView({behavior:'smooth', block:'start'});
+        document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+      })
+    });
+
+    // Appear animations when scrolling
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){
+          ent.target.classList.add('visible');
+          ent.target.style.opacity = 1;
+        }
+      });
+    },{threshold:0.12});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+    // PDF open in new tab - filename must be placed in the same folder
+    const pdfFilename = "¿De qué manera podemos concientizar a nuestra comunidad para generar un cambio significativo en el cuidado del agua?.pdf";
+    document.getElementById('verInforme').addEventListener('click', ()=>{
+      // Use encodeURI to safely open filename with special characters
+      window.open(encodeURI(pdfFilename), '_blank');
+    });
+
+    // Update active nav based on scroll position
+    const sections = ['inicio','problema','estrategias','propuesta','conclusion','creditos'];
+    window.addEventListener('scroll', ()=>{
+      let current = 'inicio';
+      for(const id of sections){
+        const el = document.getElementById(id);
+        if(el.getBoundingClientRect().top <= 140) current = id;
+      }
+      document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active', b.getAttribute('data-target') === current));
+    });
+  </script>
+</body>
+</html>
